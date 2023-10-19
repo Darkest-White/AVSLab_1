@@ -2,6 +2,7 @@
 #include<omp.h>
 using namespace std;
 
+
 int main(int argc, char* argv[])
 {
 #pragma omp parallel
@@ -16,10 +17,9 @@ int main(int argc, char* argv[])
 		cout << omp_get_num_threads() << endl;
 	}
 
-
+	omp_set_num_threads(4);
 #pragma omp parallel
 	{
-		omp_set_num_threads(4);
 		cout << "Thread: 3" << endl;
 		cout << omp_get_num_threads() << endl;
 	}

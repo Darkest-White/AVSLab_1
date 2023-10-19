@@ -9,7 +9,6 @@ int main(int argc, char* argv[])
 		cout << "No parameters" << endl;
 		return 0;
 	}
-
 	string mode = argv[1];
 
 	if (mode == "parallel")
@@ -25,7 +24,6 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-		cout << "Uncorrect parameters" << endl;
+		cout << "uncorrect parameters" << endl;
 	}
-
 }

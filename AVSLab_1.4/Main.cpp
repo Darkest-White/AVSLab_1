@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 
 #pragma omp parallel num_threads(128)
 	{
-		
+
 	}
 
 	cout << "Num of threads: " << omp_get_num_threads() << endl;
