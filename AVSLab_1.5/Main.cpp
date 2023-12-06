@@ -4,26 +4,24 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	if (argc < 2)
+	system("chcp 1251");
+	system("cls");
+	omp_set_num_threads(5);
+	string tmp;
+	do
 	{
-		cout << "No parameters" << endl;
-		return 0;
-	}
-	string mode = argv[1];
+		cout << "Input parameter: ";
+		cin >> tmp;
+	} while (tmp != "parallel" && tmp != "serial");
 
-	if (mode == "parallel")
+	if (tmp == "parallel")
 	{
+		cout << "\nПараллельный регион\n";
 #pragma omp parallel
 		{
-			cout << "parallel mode is on" << endl;
+			cout << "I'm Parallel!\n";
 		}
 	}
-	else if (mode == "serial")
-	{
-		cout << "serial mode is on" << endl;
-	}
-	else
-	{
-		cout << "uncorrect parameters" << endl;
-	}
+	else cout << "\nПоследовательный регион\n";
+
 }

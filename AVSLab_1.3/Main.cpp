@@ -5,23 +5,22 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
+	cout << "Area: 1 ";
 #pragma omp parallel
 	{
-		cout << "Thread: 1" << endl;
-		cout << omp_get_num_threads() << endl;
+		cout << "Threads: " << omp_get_num_threads() << endl;
 	}
 
+	cout << "Area: 2 ";
 #pragma omp parallel num_threads(3)
 	{
-		cout << "Thread: 2" << endl;
-		cout << omp_get_num_threads() << endl;
+		cout << "Threads: " << omp_get_num_threads() << endl;
 	}
 
 	omp_set_num_threads(4);
+	cout << "Area: 3 ";
 #pragma omp parallel
 	{
-		cout << "Thread: 3" << endl;
-		cout << omp_get_num_threads() << endl;
+		cout << "Threads: " << omp_get_num_threads() << endl;
 	}
-	return 0;
 }
